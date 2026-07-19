@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-blob: blob 7s infinite;
+  
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@utility liquid-glass {
+  @apply bg-[var(--glass-bg)] backdrop-blur-xl border border-[var(--glass-border)] rounded-2xl shadow-lg transition-all duration-300;
+  
+  &:hover {
+    @apply bg-[var(--glass-bg-hover)] border-white/20 shadow-cyan-500/10;
+  }
+}
+
+@utility liquid-glass-card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300;
+  
+  &:hover {
+    @apply bg-white/10 border-white/20 -translate-y-1 shadow-xl shadow-cyan-500/10;
+  }
+}
+
+/* Efectos de Scroll Reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }

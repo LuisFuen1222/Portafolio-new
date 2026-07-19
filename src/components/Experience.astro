@@ -1,0 +1,82 @@
+---
+const experience = [
+  {
+    period: "2025 - Presente",
+    role: "DESARROLLADOR FULL STACK",
+    company: "GR-HUB",
+    description: [
+      "Colaboré en el desarrollo de sitios web corporativos de alta disponibilidad (Guthersa, Terra Playa, Chablé Residences) empleando Astro, Vue.js, AlpineJS y Tailwind CSS.",
+      "Lideré el desarrollo integral desde cero para las plataformas de Sian Experience y Chablé Valle de Guadalupe Residences.",
+      "Arquitecté y construí los sistemas administrativos utilizando Vue.js y Tailwind CSS (Frontend), y Laravel (Backend).",
+      "Gestioné el mantenimiento de servidores (VPS) y despliegues a producción."
+    ],
+    color: "from-cyan-400 to-cyan-600",
+    dot: "bg-cyan-400",
+    shadow: "shadow-cyan-500/20"
+  },
+  {
+    period: "2024 - 2025",
+    role: "DESARROLLADOR FULL STACK",
+    company: "TRIPNOW",
+    description: [
+      "Participé en el mantenimiento y optimización del sistema CRM interno, desarrollando módulos y consultas SQL personalizadas utilizando PHP.",
+      "Desarrollé e implementé una API RESTful en Laravel para la integración de datos del CRM con otras plataformas.",
+      "Diseñé e integré nuevas interfaces de usuario en el portal corporativo para mejorar la experiencia."
+    ],
+    color: "from-blue-400 to-blue-600",
+    dot: "bg-blue-400",
+    shadow: "shadow-blue-500/20"
+  }
+];
+---
+<section id="experiencia" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16 reveal-on-scroll">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Experiencia</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+    </div>
+
+    <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500/20 before:via-blue-500/20 before:to-transparent">
+      {experience.map((job, index) => (
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active reveal-on-scroll delay-100">
+          <!-- Icon -->
+          <div class={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#0a0a0a] ${job.dot} shadow-[0_0_15px_rgba(0,0,0,0.5)] md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shrink-0 relative z-10 ${job.shadow}`}>
+          </div>
+          <!-- Card -->
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] liquid-glass-card">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+              <h3 class="font-bold text-xl text-white">{job.role}</h3>
+              <time class={`text-sm font-medium px-3 py-1 rounded-full bg-gradient-to-r ${job.color} text-white shrink-0 shadow-lg`}>{job.period}</time>
+            </div>
+            <h4 class="text-lg font-medium text-gray-300 mb-4">{job.company}</h4>
+            <ul class="space-y-2 text-gray-400 text-sm md:text-base">
+              {job.description.map(item => (
+                <li class="flex gap-2">
+                  <span class="text-cyan-500 mt-1">▹</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Educación -->
+    <div class="mt-24 text-center reveal-on-scroll delay-200">
+      <h3 class="text-2xl font-bold text-white mb-8">Educación</h3>
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="liquid-glass p-6 text-center reveal-on-scroll delay-[300ms]">
+          <div class="text-purple-400 font-bold mb-2">2023 - 2025</div>
+          <h4 class="text-white font-medium mb-1">Ingeniería en Desarrollo y Gestión de Software</h4>
+          <p class="text-gray-400 text-sm">Universidad Tecnológica de Cancún</p>
+        </div>
+        <div class="liquid-glass p-6 text-center reveal-on-scroll delay-[400ms]">
+          <div class="text-purple-400 font-bold mb-2">2021 - 2023</div>
+          <h4 class="text-white font-medium mb-1">Técnico Superior Universitario en TI</h4>
+          <p class="text-gray-400 text-sm">Universidad Tecnológica de Cancún</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

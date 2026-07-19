@@ -1,0 +1,114 @@
+---
+const projects = [
+  {
+    title: "Sian Experience",
+    type: "Proyecto Propio",
+    url: "https://www.sianexperience.com/",
+    private: false,
+    gradient: "from-purple-500 to-pink-500"
+  },
+  {
+    title: "Chablé Valle de Guadalupe Residences",
+    type: "Proyecto Propio",
+    url: "https://chvalledeguadaluperesidences.com/",
+    private: false,
+    gradient: "from-purple-500 to-pink-500"
+  },
+  {
+    title: "Backoffice Thingstodos",
+    type: "Proyecto Propio (Interno)",
+    url: null,
+    private: true,
+    gradient: "from-gray-500 to-gray-700"
+  },
+  {
+    title: "GR HUB Backoffice",
+    type: "Proyecto Propio (Interno)",
+    url: null,
+    private: true,
+    gradient: "from-gray-500 to-gray-700"
+  },
+  {
+    title: "Ghutersa",
+    type: "Colaboración",
+    url: "https://guthersa.com/",
+    private: false,
+    gradient: "from-cyan-500 to-blue-500"
+  },
+  {
+    title: "Terra playa",
+    type: "Colaboración",
+    url: "https://www.terraplaya.com/",
+    private: false,
+    gradient: "from-cyan-500 to-blue-500"
+  },
+  {
+    title: "Chable Yucatan Residences",
+    type: "Colaboración",
+    url: "https://chyucatanresidences.com/",
+    private: false,
+    gradient: "from-cyan-500 to-blue-500"
+  },
+  {
+    title: "Chable Costalegre Residences",
+    type: "Colaboración",
+    url: "https://chcostalegreresidences.com/",
+    private: false,
+    gradient: "from-cyan-500 to-blue-500"
+  },
+  {
+    title: "Tropical Incentives",
+    type: "Colaboración",
+    url: "https://tropicalincentives.com/",
+    private: false,
+    gradient: "from-cyan-500 to-blue-500"
+  },
+  {
+    title: "Requi.AI",
+    type: "Colaboración (Interno)",
+    url: null,
+    private: true,
+    gradient: "from-gray-500 to-gray-700"
+  }
+];
+---
+<section id="proyectos" class="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 reveal-on-scroll">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Proyectos</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+      <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+        Una selección de mis proyectos más recientes, divididos en desarrollos propios desde cero y colaboraciones en equipo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project, index) => (
+        <div class={`liquid-glass-card group flex flex-col justify-between h-full relative overflow-hidden reveal-on-scroll`} style={`transition-delay: ${index * 100}ms`}>
+          <div class={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${project.gradient} opacity-50 group-hover:opacity-100 transition-opacity duration-300`}></div>
+          
+          <div class="mb-6">
+            <span class="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300 mb-4">
+              {project.type}
+            </span>
+            <h3 class="text-xl font-bold text-white mb-2">{project.title}</h3>
+          </div>
+          
+          <div class="mt-auto">
+            {project.private ? (
+              <div class="flex items-center text-gray-500 text-sm gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                Privado (Interno)
+              </div>
+            ) : (
+              <a href={project.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium gap-1 group/link">
+                Visitar sitio web
+                <svg class="w-4 h-4 transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
